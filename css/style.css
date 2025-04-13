@@ -1,0 +1,115 @@
+.warna1 {
+  background-color: #FFF3E4; /* peach muda */
+}
+.warna2 {
+  background-color: #E6A07C; /* soft orange-brown */
+}
+.warna3 {
+  background-color: #FFE79B; /* kuning pastel */
+}
+.warna4 {
+  background-color: #FFD3DA; /* pink lembut */
+}
+
+.banner{
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/kue.jpg');
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: #8B5E3C;
+}
+
+.no-decoration:hover {
+  color: #FFBC80;
+}
+
+.text-harga {
+  font-size: 20px;
+  color: #8B5E3C;
+}
+
+.image-box {
+  max-height: 450px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-produk {
+  height: 45vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/kue.jpg');
+  background-position: 50% 35%;
+}
+
+/* ==== NAVBAR LINK EFFECT ==== */
+.navbar .nav-link {
+  color: #8B5E3C !important; /* warna cokelat muda */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #E6A07C;
+  transition: width 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar .nav-link:hover {
+  color: #E6A07C !important;
+  font-weight: 500;
+}
+
+/* ==== ACTIVE NAV LINK ==== */
+.navbar .nav-link.active {
+  color: #C17753 !important;
+  font-weight: bold;
+}
+
+/* ==== BUTTON HOVER EFFECT ==== */
+.btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* ==== WARNA2 (tombol soft orange-brown) HOVER ==== */
+.btn.warna2:hover {
+  background-color: #cc835f;
+}
+
+/* ==== WARNA4 (pink lembut) HOVER ==== */
+.btn.warna4:hover {
+  background-color: #f4b0ba;
+}
+
+/* ==== SMOOTH CARD HOVER ==== */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
