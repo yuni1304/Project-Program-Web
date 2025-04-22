@@ -20,11 +20,11 @@
   <div class="container-fluid banner d-flex align-items-center">
     <div class="container text-center text-white">
       <h1 class="fw-bold display-4">KueCamilan.ID</h1>
-      <h3 class="mb-4">Temukan Camilan & Kopi Favoritmu 🍪☕</h3>
+      <h3 class="mb-4">Temukan Kue & Camilan Favoritmu 🍪</h3>
       <div class="col-md-8 offset-md-2">
         <form method="get" action="produk.php">
           <div class="input-group input-group-lg my-4">
-            <input type="text" class="form-control" placeholder="Cari produk camilan atau kopi..." name="keyword" aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" placeholder="Cari produk kue atau camilan..." name="keyword" aria-label="Search" aria-describedby="basic-addon2">
             <button type="submit" class="btn warna2 text-white">Telusuri</button>
           </div>
         </form>

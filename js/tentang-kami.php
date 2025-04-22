@@ -31,36 +31,48 @@ session_start();
             </div>
         </div>
         <div class="col-md-6">
-            <h3 class="mb-3">KueCamilan.ID</h3>
+            <h4 class="mb-3">KueCamilan.ID</h4>
             <p class="fs-5">
-                adalah toko online yang menghadirkan beragam kue dan camilan khas Nusantara, 
-                langsung dari para pembuat lokal ke rumah Anda. Kami percaya bahwa setiap gigitan menyimpan kenangan, 
-                kehangatan, dan cita rasa yang layak dinikmati oleh semua orang, dari Sabang hingga Merauke.
+                Camilan enak, gak ribet, langsung sampai rumah.
             </p>
             <p class="fs-5">
-                Di KueCamilan.ID, kami menyediakan berbagai pilihan kue basah, kue kering, snack tradisional, 
-                hingga camilan kekinian—semuanya melalui proses kurasi agar kualitas dan rasa tetap terjaga. 
-                Kami bekerja sama dengan UMKM dan pembuat rumahan yang terampil dan berdedikasi.
+                Di sini kamu bisa nemuin macam-macam camilan dari kue kering buat teman ngeteh, kue basah yang lembut banget, sampai kue ulang tahun dan hampers cantik buat ngasih kejutan ke orang tersayang.
             </p>
             <p class="fs-5">
-                Lebih dari sekadar tempat belanja camilan, kami hadir untuk menghubungkan penikmat jajanan dengan para pelaku 
-                usaha lokal, memberdayakan komunitas, dan melestarikan kekayaan kuliner Indonesia. Setiap pembelian Anda adalah bentuk dukungan nyata bagi pelaku usaha kecil di tanah air.
+                Kami pilih semua produk dari pembuat lokal yang jago bikin camilan enak dan tampilannya pun gak kalah keren. Jadi, selain nikmat di mulut, juga enak dilihat.
             </p>
             <p class="fs-5">
-                Temukan camilan favorit Anda bersama <strong>KueCamilan.ID</strong> — karena setiap rasa punya cerita.
+                Karena menurut kami, camilan itu lebih dari sekadar makanan.
+            </p>
+            <p class="fs-5">
+                <strong>Camilan bisa jadi hadiah, penghilang stres, teman ngobrol, atau sekadar pengingat kalau hari ini gak seburuk itu.</strong>
             </p>
         </div>
     </div>
 </div>
 
-    <!-- Visi Misi -->
-    <div class="container-fluid warna3 py-5 text-center">
-        <div class="container">
-            <h3 class="mb-4">Visi & Misi Kami</h3>
-            <p class="fs-5">Menjadi toko camilan online terpercaya yang membawa cita rasa lokal ke seluruh penjuru negeri.</p>
-            <p class="fs-5">Kami berkomitmen menyediakan produk berkualitas tinggi, layanan ramah, dan pengalaman belanja yang memuaskan sekaligus mendukung UMKM lokal agar terus berkembang.</p>
+  <!-- Visi Misi -->
+<div class="container-fluid warna3 py-5 text-center">
+    <div class="container px-4 px-md-5">
+        <h3 class="mb-4 fw-bold">Visi & Misi Kami</h3>
+        <div class="mx-auto" style="max-width: 800px; line-height: 1.6;">
+            <p class="fs-5 mb-2">
+                Di <strong>KueCamilan.ID</strong>, semua camilan dibuat sendiri dengan hati, rasa, dan niat yang serius,
+                tapi tetap dibungkus dengan suasana santai dan penuh kehangatan. Dari kue kering, basah, sampai hampers, 
+                semuanya aku bikin sendiri supaya kamu bisa dapet rasa homemade yang bener-bener ngangenin.
+            </p>
+            <p class="fs-5 mb-2"><strong>Visinya</strong> simpel: pengin bikin orang senyum lewat camilan enak.</p>
+            <p class="fs-5 mb-2">
+                <strong>Misinya</strong>? Ya bikin yang enak, layak dikasih ke orang tersayang, gampang dipesen,
+                dan langsung sampai ke rumah tanpa drama.
+            </p>
+            <p class="fs-5 mb-0">
+                Karena buat aku, bikin kue itu bukan cuma jualan. Ini tentang berbagi rasa, cerita, dan momen kecil 
+                yang bisa bikin hari siapa pun jadi lebih baik.
+            </p>
         </div>
     </div>
+</div>
 
  <!-- footer -->
  <hr>
