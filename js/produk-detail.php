@@ -51,7 +51,7 @@ if (!$produk) {
         <!-- Tambahan Deskripsi -->
         <p class="mb-4"><strong>Deskripsi:</strong><br><?php echo nl2br(htmlspecialchars($produk['detail'])); ?></p>
 
-        <a href="checkout.php?id=<?php echo $produk['id']; ?>" class="btn warna2 text-white me-2">Beli Sekarang</a>
+        <a href="checkout_langsung.php?id=<?php echo $produk['id']; ?>&qty=1" class="btn warna2 text-white me-2">Beli Sekarang</a>
         <a href="produk.php" class="btn btn-outline-secondary">Kembali ke Produk</a>
       </div>
     </div>

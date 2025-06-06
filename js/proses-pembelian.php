@@ -50,6 +50,10 @@ if (!$produk) {
 
         <!-- Tambahan Deskripsi -->
         <p class="mb-4"><strong>Deskripsi:</strong><br><?php echo nl2br(htmlspecialchars($produk['detail'])); ?></p>
+        <form action="keranjang_action.php?action=tambah&id=<?php echo $produk['id']; ?>" method="POST" class="d-inline">
+          <input type="number" name="jumlah" value="1" min="1" class="form-control d-inline-block" style="width: 70px; vertical-align: middle;">
+          <button type="submit" class="btn btn-warning text-white ms-2">Tambah ke Keranjang</button>
+        </form>
 
         <a href="checkout.php?id=<?php echo $produk['id']; ?>" class="btn warna2 text-white me-2">Beli Sekarang</a>
         <a href="produk.php" class="btn btn-outline-secondary">Kembali ke Produk</a>

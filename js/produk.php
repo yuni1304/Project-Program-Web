@@ -66,12 +66,16 @@
                 <a href="produk-detail.php?nama=<?php echo urlencode($produk['nama']); ?>" class="btn warna2 text-white w-100 mb-2">
                   <i class="fas fa-eye me-2"></i> Lihat Detail
                 </a>
-                <a href="tambah-ke-keranjang.php?id=<?php echo $produk['id']; ?>" class="btn btn-warning w-100 mb-2">
-                  <i class="fas fa-cart-plus me-2"></i> Tambah ke Keranjang
-                </a>
-                <a href="checkout.php?id=<?php echo $produk['id']; ?>" class="btn btn-success w-100">
+                <a href="checkout_langsung.php?id=<?= $produk['id'] ?>&qty=1" class="btn btn-success w-100">
                   <i class="fas fa-shopping-cart me-2"></i> Beli Sekarang
                 </a>
+                <form action="keranjang_action.php?action=tambah&id=<?php echo $produk['id']; ?>" method="POST" class="mt-2">
+                  <input type="hidden" name="jumlah" value="1">
+                  <button type="submit" class="btn btn-warning text-white w-100">
+                    <i class="fas fa-cart-plus me-2"></i> + Keranjang
+                  </button>
+                </form>
+
               </div>
             </div>
           </div>
