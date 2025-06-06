@@ -27,7 +27,7 @@ session_start();
     <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
             <div class="text-center">
-                <img src="../image/bgkue.jpg" alt="KueCamilan.ID" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover; width: 100%;">
+                <img src="../image/Logo_toko_kue.jpg" alt="KueCamilan.ID" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover; width: 100%;">
             </div>
         </div>
         <div class="col-md-6">

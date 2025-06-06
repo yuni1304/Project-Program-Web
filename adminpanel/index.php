@@ -73,6 +73,18 @@ $_SESSION['username'] = 'admin';
                     </div>
                 </div>
             </div>
+            <div class="col-md-7">
+                    <div class="p-4 summary-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fas fa-shopping-cart summary-icon"></i>
+                    </div>
+                    <div class="text-end">
+                        <h4 class="fw-bold">Pesanan</h4>
+                        <p class="fs-5 mb-1">Lihat semua pesanan</p>
+                        <a href="pesanan.php" class="text-primary no-decoration">Lihat Detail</a>
+                    </div>
+                </div>
+             </div>
         </div>
     </div>
 </body>
