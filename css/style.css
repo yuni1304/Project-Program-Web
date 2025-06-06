@@ -51,6 +51,17 @@
   background-position: 50% 35%;
 }
 
+.login-page {
+  background-image: url('../image/fotobgadmin.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 /* ==== NAVBAR LINK EFFECT ==== */
 .navbar .nav-link {
   color: #8B5E3C !important; /* warna cokelat muda */

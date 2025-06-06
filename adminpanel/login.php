@@ -12,6 +12,13 @@ require('koneksi.php');
     <style>
         .main {
             height: 100vh;
+            background-image: url('../image/fotobgadmin.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.9);
         }
     </style>
 </head>
