@@ -61,6 +61,19 @@ if (!$produk) {
           <label for="jumlah" class="form-label mt-3">Jumlah:</label>
           <input type="number" name="jumlah" id="jumlah" class="form-control" value="1" min="1" required />
 
+          <label for="kota" class="form-label mt-3">Kota:</label>
+          <select name="kota" id="kota" class="form-select" required onchange="hitungOngkir()">
+            <option value="">-- Pilih Kota --</option>
+            <option value="Batam">Batam</option>
+            <option value="Tanjung Pinang">Tanjung Pinang</option>
+            <option value="Tanjung Balai Karimun">Tanjung Balai Karimun</option>
+            <option value="Tanjung Pinang Kota">Tanjung Pinang Kota</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+
+          <input type="hidden" name="ongkir" id="ongkir" value="0" />
+          <p class="mt-2 fw-semibold">Ongkir: Rp <span id="ongkirDisplay">0</span></p>
+
           <label for="metode_pembayaran" class="form-label mt-3">Metode Pembayaran:</label>
           <select name="metode_pembayaran" id="metode_pembayaran" class="form-select" required>
             <option value="cod">COD (Bayar di tempat)</option>
@@ -87,5 +100,23 @@ if (!$produk) {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function hitungOngkir() {
+      const kota = document.getElementById('kota').value;
+      const ongkirInput = document.getElementById('ongkir');
+      const ongkirDisplay = document.getElementById('ongkirDisplay');
+
+      let ongkir = 0;
+      if (kota === "Batam") {
+        ongkir = 10000;
+      } else if (kota !== "") {
+        ongkir = 30000;
+      }
+
+      ongkirInput.value = ongkir;
+      ongkirDisplay.innerText = ongkir.toLocaleString('id-ID');
+    }
+  </script>
 </body>
 </html>

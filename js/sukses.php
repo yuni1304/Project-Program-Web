@@ -7,7 +7,7 @@
 </head>
 <body class="text-center py-5">
     <h2>🎉 Pembayaran Berhasil!</h2>
-    <p>Terima kasih telahs membeli produk kami.</p>
+    <p>Terima kasih telah membeli produk kami.</p>
     <a href="index.php" class="btn btn-primary mt-3">Kembali ke Beranda</a>
 </body>
 </html>
