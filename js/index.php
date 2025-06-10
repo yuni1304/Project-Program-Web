@@ -1,6 +1,6 @@
 <?php
-  require '../adminpanel/koneksi.php';
-  $queryProduk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 3");
+require '../adminpanel/koneksi.php';
+$queryProduk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 3");
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@
 <body>
   <?php require "navbar.php"; ?>
   
-  <!-- banner -->
   <div class="container-fluid banner d-flex align-items-center">
     <div class="container text-center text-white">
       <h1 class="fw-bold display-4">KueCamilan.ID</h1>
@@ -32,7 +31,6 @@
     </div>
   </div>
 
-  <!-- tentang kami -->
   <div class="container-fluid warna3 py-5">
     <div class="container text-center">
       <h3 class="fw-bold">Tentang Kami</h3>
@@ -47,7 +45,6 @@
     </div>
   </div>
 
-  <!-- produk -->
   <div class="container-fluid py-5 warna1">
     <div class="container text-center">
       <h3 class="fw-bold text-dark">Produk Pilihan Kami</h3>
@@ -72,17 +69,16 @@
     </div>
   </div>
 
-  <!-- footer -->
-<hr>
-<footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
-  <div class="container text-center">
-    <p class="mb-2 fw-semibold text-dark">Hubungi Kami</p>
-    <a href="https://wa.me/qr/75SJHWDGP3FED1" target="_blank" class="text-dark text-decoration-none fw-semibold">
-      <i class="fab fa-whatsapp fa-2x me-2"></i> Chat via WhatsApp
-    </a>
-    <p class="mt-3 mb-0 text-dark">&copy; 2025 <strong>KueCamilan.ID</strong>. All Rights Reserved.</p>
-  </div>
-</footer>
+  <hr>
+  <footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
+    <div class="container text-center">
+      <p class="mb-2 fw-semibold text-dark">Hubungi Kami</p>
+      <a href="https://wa.me/qr/75SJHWDGP3FED1" target="_blank" class="text-dark text-decoration-none fw-semibold">
+        <i class="fab fa-whatsapp fa-2x me-2"></i> Chat via WhatsApp
+      </a>
+      <p class="mt-3 mb-0 text-dark">&copy; 2025 <strong>KueCamilan.ID</strong>. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

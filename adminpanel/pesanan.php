@@ -2,7 +2,7 @@
 require "session.php";
 require "koneksi.php";
 
-// Ambil data pesanan dari database
+
 $query = mysqli_query($con, "SELECT pesanan.*, produk.nama AS nama_produk 
                              FROM pesanan 
                              JOIN produk ON pesanan.produk_id = produk.id 

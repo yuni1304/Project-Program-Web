@@ -7,7 +7,7 @@ require '../adminpanel/koneksi.php';
 <head>
   <meta charset="UTF-8">
   <title>Keranjang Belanja | KueCamilan.ID</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- Tambah meta viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,7 +15,6 @@ require '../adminpanel/koneksi.php';
 <body>
 <?php require "navbar.php"; ?>
 
-<!-- Banner -->
 <div class="container-fluid banner-produk d-flex align-items-center text-center text-white" style="height: 300px;">
   <div class="container">
     <h1 class="display-5 fw-bold">Keranjang Belanja</h1>
@@ -23,7 +22,6 @@ require '../adminpanel/koneksi.php';
   </div>
 </div>
 
-<!-- Keranjang Body -->
 <div class="container py-5">
   <?php if (!empty($_SESSION['keranjang'])) { ?>
     <div class="table-responsive mb-5">
@@ -65,7 +63,6 @@ require '../adminpanel/koneksi.php';
       </table>
     </div>
 
-    <!-- Total dan Checkout -->
     <div class="row justify-content-end">
       <div class="col-md-5">
         <div class="card border-0 shadow-sm p-4" style="background-color: #fff8e1;">
@@ -84,19 +81,17 @@ require '../adminpanel/koneksi.php';
   <?php } ?>
 </div>
 
- <!-- footer -->
-    <hr>
-    <footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
-        <div class="container text-center">
-            <p class="mb-2 fw-semibold text-dark">Hubungi Kami</p>
-            <a href="https://wa.me/qr/75SJHWDGP3FED1" target="_blank" class="text-dark text-decoration-none fw-semibold">
-                <i class="fab fa-whatsapp fa-2x me-2"></i> Chat via WhatsApp
-            </a>
-            <p class="mt-3 mb-0 text-dark">&copy; 2025 <strong>KueCamilan.ID</strong>. All Rights Reserved.</p>
-        </div>
-    </footer>
+<hr>
+<footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
+  <div class="container text-center">
+    <p class="mb-2 fw-semibold text-dark">Hubungi Kami</p>
+    <a href="https://wa.me/qr/75SJHWDGP3FED1" target="_blank" class="text-dark text-decoration-none fw-semibold">
+      <i class="fab fa-whatsapp fa-2x me-2"></i> Chat via WhatsApp
+    </a>
+    <p class="mt-3 mb-0 text-dark">&copy; 2025 <strong>KueCamilan.ID</strong>. All Rights Reserved.</p>
+  </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

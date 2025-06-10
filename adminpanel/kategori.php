@@ -2,19 +2,16 @@
 require "session.php";
 require "koneksi.php";
 
-// Initialize a message variable
 $message = '';
 
-// Process form submission to add a new category
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_category'])) {
     $newCategory = mysqli_real_escape_string($con, $_POST['new_category']);
 
-    // Check if the category already exists
     $checkCategory = mysqli_query($con, "SELECT * FROM kategori WHERE nama = '$newCategory'");
     if (mysqli_num_rows($checkCategory) > 0) {
         $message = "Kategori sudah ada!";
     } else {
-        // Insert the new category into the database
+
         $insertCategory = mysqli_query($con, "INSERT INTO kategori (nama) VALUES ('$newCategory')");
         if ($insertCategory) {
             $message = "Kategori baru berhasil ditambahkan!";
@@ -24,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_category'])) {
     }
 }
 
-// Fetch all categories for display
+
 $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
 ?>
 
@@ -69,12 +66,12 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
 
         <h2 class="mb-4">Kategori Produk</h2>
 
-        <!-- Message Feedback -->
+        
         <?php if ($message) { ?>
             <div class="alert alert-info"><?= $message; ?></div>
         <?php } ?>
 
-        <!-- Form untuk menambah kategori baru -->
+        
         <form class="mb-4" method="POST">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Nama kategori baru" name="new_category" required>
@@ -82,7 +79,7 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
             </div>
         </form>
 
-        <!-- Tabel Kategori -->
+        
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -102,7 +99,7 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
                         <td><?= $no++; ?></td>
                         <td><?= $kategori['nama']; ?></td>
                         <td>
-                            <!-- Add Action buttons like Edit and Delete here -->
+                           
                             <a href="edit_kategori.php?id=<?= $kategori['id']; ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Edit</a>
                             <a href="hapus_kategori.php?id=<?= $kategori['id']; ?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Hapus</a>
                         </td>

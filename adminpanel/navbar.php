@@ -10,7 +10,7 @@
         <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/index.php">Home</a></li>
         <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/kategori.php">Kategori</a></li>
         <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/produk.php">Produk</a></li>
-        <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/pesanan.php">Pemesanan</a></li>
+        <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/pesanan.php">Pesanan</a></li>
         <li class="nav-item me-4"><a class="nav-link" href="/adminpanel/logout.php">Logout</a></li>
       </ul>
     </div>

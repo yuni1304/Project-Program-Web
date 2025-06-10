@@ -2,10 +2,10 @@
 require "session.php";
 require "koneksi.php";
 
-// Initialize a message variable
+
 $message = '';
 
-// Process form submission to add a new product
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_product'])) {
     $namaProduk = mysqli_real_escape_string($con, $_POST['nama_produk']);
     $hargaProduk = mysqli_real_escape_string($con, $_POST['harga_produk']);
@@ -14,14 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_product'])) {
     $ketersediaanStok = mysqli_real_escape_string($con, $_POST['ketersediaan_stok']);
     $stok = (int) $_POST['stok_produk'];
 
-    // Handle file upload
+
     $fotoProduk = '';
     if (isset($_FILES['foto_produk']) && $_FILES['foto_produk']['error'] == 0) {
         $fotoProduk = '../image/' . $_FILES['foto_produk']['name'];
         move_uploaded_file($_FILES['foto_produk']['tmp_name'], $fotoProduk);
     }
 
-    // Insert the new product into the database
+   
     $insertProduct = mysqli_query($con, "INSERT INTO produk (kategori_id, nama, harga, detail, foto, ketersediaan_stok, stok) 
     VALUES ('$kategoriId', '$namaProduk', '$hargaProduk', '$detailProduk', '$fotoProduk', '$ketersediaanStok', '$stok')");
 
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_product'])) {
     }
 }
 
-// Handle Edit Product
+
 if (isset($_GET['edit'])) {
     $productId = $_GET['edit'];
     $queryEdit = mysqli_query($con, "SELECT * FROM produk WHERE id = '$productId'");
@@ -63,7 +63,7 @@ if (isset($_GET['edit'])) {
     }
 }
 
-// Handle Delete Product
+
 if (isset($_GET['delete'])) {
     $productId = $_GET['delete'];
     $deleteProduct = mysqli_query($con, "DELETE FROM produk WHERE id = '$productId'");

@@ -1,16 +1,16 @@
 <?php 
-    require '../adminpanel/koneksi.php';
-    $queryKategori = mysqli_query($con,"SELECT * FROM kategori");
+require '../adminpanel/koneksi.php';
+$queryKategori = mysqli_query($con,"SELECT * FROM kategori");
 
-    if(isset($_GET['keyword'])) { 
-      $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE nama LIKE '%$_GET[keyword]%'");
-    } else if(isset($_GET['kategori'])) { 
-      $queryGetKategoriID = mysqli_query($con, "SELECT id FROM kategori WHERE nama='$_GET[kategori]'");
-      $kategoriID = mysqli_fetch_array($queryGetKategoriID);
-      $queryProduk = mysqli_query($con,"SELECT * FROM produk WHERE kategori_id='$kategoriID[id]'");
-    } else {
-      $queryProduk = mysqli_query($con,"SELECT * FROM produk");
-    }
+if(isset($_GET['keyword'])) { 
+  $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE nama LIKE '%$_GET[keyword]%'");
+} else if(isset($_GET['kategori'])) { 
+  $queryGetKategoriID = mysqli_query($con, "SELECT id FROM kategori WHERE nama='$_GET[kategori]'");
+  $kategoriID = mysqli_fetch_array($queryGetKategoriID);
+  $queryProduk = mysqli_query($con,"SELECT * FROM produk WHERE kategori_id='$kategoriID[id]'");
+} else {
+  $queryProduk = mysqli_query($con,"SELECT * FROM produk");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,6 @@
 <body>
 <?php require "navbar.php"; ?>
 
-<!-- banner -->
 <div class="container-fluid banner-produk d-flex align-items-center text-center text-white">
   <div class="container">
     <h1 class="display-5 fw-bold">Nikmati Kelezatan Kue & Camilan Kami</h1>
@@ -34,7 +33,6 @@
   </div>
 </div>
 
-<!-- body -->
 <div class="container py-5">
   <div class="row">
     <div class="col-lg-3 mb-5">
@@ -50,7 +48,6 @@
 
     <div class="col-lg-9">
       <h3 class="text-center mb-4">Produk</h3>
-
       <div class="row">
         <?php if(mysqli_num_rows($queryProduk) > 0) { ?>
           <?php while($produk = mysqli_fetch_array($queryProduk)){ ?>
@@ -75,7 +72,6 @@
                     <i class="fas fa-cart-plus me-2"></i> + Keranjang
                   </button>
                 </form>
-
               </div>
             </div>
           </div>
@@ -92,7 +88,6 @@
   </div>
 </div>
 
-<!-- footer -->
 <hr>
 <footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
   <div class="container text-center">

@@ -28,12 +28,10 @@ if (!$produk) {
 <body>
   <?php require "navbar.php"; ?>
 
-  <!-- Banner Detail Produk -->
   <div class="container-fluid banner-produk d-flex align-items-center justify-content-center">
     <h1 class="text-white fw-bold"><?php echo htmlspecialchars($produk['nama']); ?></h1>
   </div>
 
-  <!-- Detail Produk -->
   <div class="container py-5">
     <div class="row">
       <div class="col-md-5">
@@ -48,7 +46,6 @@ if (!$produk) {
         <p class="mb-2"><strong>Ketersediaan:</strong> <?php echo htmlspecialchars($produk['ketersediaan_stok']); ?></p>
         <p class="mb-2"><strong>Stok Tersedia:</strong> <?php echo (int)$produk['stok']; ?></p>
 
-        <!-- Tambahan Deskripsi -->
         <p class="mb-4"><strong>Deskripsi:</strong><br><?php echo nl2br(htmlspecialchars($produk['detail'])); ?></p>
 
         <a href="checkout_langsung.php?id=<?php echo $produk['id']; ?>&qty=1" class="btn warna2 text-white me-2">Beli Sekarang</a>
@@ -57,7 +54,6 @@ if (!$produk) {
     </div>
   </div>
 
-  <!-- Footer -->
   <hr>
   <footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
     <div class="container text-center">
