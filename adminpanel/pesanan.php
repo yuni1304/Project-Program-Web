@@ -2,11 +2,8 @@
 require "session.php";
 require "koneksi.php";
 
-
-$query = mysqli_query($con, "SELECT pesanan.*, produk.nama AS nama_produk 
-                             FROM pesanan 
-                             JOIN produk ON pesanan.produk_id = produk.id 
-                             ORDER BY pesanan.id DESC");
+// Menggunakan `produk_id` dan memperbaiki nama kolom sesuai tabel
+$query = mysqli_query($con, "SELECT * FROM pesanan ORDER BY id DESC");
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +33,15 @@ $query = mysqli_query($con, "SELECT pesanan.*, produk.nama AS nama_produk
             <thead class="table-light">
                 <tr>
                     <th>No.</th>
-                    <th>Produk</th>
+                    <th>Produk ID</th>
                     <th>Nama Pembeli</th>
+                    <th>No. HP</th>
+                    <th>Kota</th>
                     <th>Alamat</th>
-                    <th>Jumlah</th>
                     <th>Tanggal Pesan</th>
                     <th>Metode Pembayaran</th>
+                    <th>Total</th>
+                    <th>Ongkir</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,12 +51,15 @@ $query = mysqli_query($con, "SELECT pesanan.*, produk.nama AS nama_produk
                 ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= htmlspecialchars($row['nama_produk']); ?></td>
+                    <td><?= htmlspecialchars($row['produk_id']); ?></td>
                     <td><?= htmlspecialchars($row['nama_pembeli']); ?></td>
+                    <td><?= htmlspecialchars($row['no_hp']); ?></td>
+                    <td><?= htmlspecialchars($row['kota']); ?></td>
                     <td><?= htmlspecialchars($row['alamat']); ?></td>
-                    <td><?= (int)$row['jumlah']; ?></td>
                     <td><?= $row['tanggal_pesan']; ?></td>
                     <td><?= strtoupper($row['metode_pembayaran']); ?></td>
+                    <td>Rp<?= number_format($row['total'], 0, ',', '.'); ?></td>
+                    <td>Rp<?= number_format($row['ongkir'], 0, ',', '.'); ?></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

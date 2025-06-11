@@ -31,22 +31,22 @@ if (empty($_SESSION['keranjang'])) {
                     <h5 class="mb-3 fw-semibold">Informasi Pembeli</h5>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Pembeli</label>
-                        <input type="text" name="nama" id="nama" class="form-control" required>
+                        <input type="text" name="nama_pembeli" id="nama" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="nohp" class="form-label">No HP</label>
-                        <input type="text" name="nohp" id="nohp" class="form-control" required>
+                        <label for="no_hp" class="form-label">Nomor HP</label>
+                        <input type="text" name="no_hp" id="no_hp" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="alamat" class="form-label">Alamat</label>
+                        <label for="alamat" class="form-label">Alamat Lengkap</label>
                         <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="kota" class="form-label">Kota</label>
-                        <select name="kota" id="kota" class="form-select" onchange="hitungOngkir()" required>
+                        <label for="kota" class="form-label">Kota Pengiriman</label>
+                        <select name="kota" id="kota" class="form-select" required onchange="hitungOngkirDanTotal()">
                             <option value="">-- Pilih Kota --</option>
                             <option value="Batam">Batam</option>
                             <option value="Tanjung Pinang">Tanjung Pinang</option>
@@ -58,17 +58,8 @@ if (empty($_SESSION['keranjang'])) {
                     <input type="hidden" name="ongkir" id="ongkir" value="0" />
                     <p class="mt-2 fw-semibold">Ongkir: Rp <span id="ongkirDisplay">0</span></p>
 
-                    <div class="mb-3 mt-3">
-                        <label class="form-label">Metode Pembayaran</label><br>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="metode_pembayaran" id="cod" value="cod" checked>
-                            <label class="form-check-label" for="cod">COD (Bayar di Tempat)</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="metode_pembayaran" id="midtrans" value="midtrans">
-                            <label class="form-check-label" for="midtrans">Transfer Otomatis (Midtrans)</label>
-                        </div>
-                    </div>
+                    <input type="hidden" name="metode_pembayaran" value="cod" />
+                    <p class="fw-bold">Bayar di tempat (COD)</p>
                 </div>
             </div>
 
@@ -87,10 +78,10 @@ if (empty($_SESSION['keranjang'])) {
                             </thead>
                             <tbody>
                                 <?php
-                                $totalBelanja = 0; // Inisialisasi total belanja di sini
+                                $totalBelanja = 0;
                                 foreach ($_SESSION['keranjang'] as $id => $jumlah) {
                                     $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE id = '$id'");
-                                    $produk = mysqli_fetch_assoc($queryProduk); // $produk sekarang didefinisikan di dalam loop
+                                    $produk = mysqli_fetch_assoc($queryProduk);
                                     $subtotal = $produk['harga'] * $jumlah;
                                     $totalBelanja += $subtotal;
 
@@ -102,17 +93,17 @@ if (empty($_SESSION['keranjang'])) {
                                     ';
                                 ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($produk['nama']); ?></td>
-                                    <td>Rp <?php echo number_format($produk['harga'], 0, ',', '.'); ?></td>
-                                    <td><?php echo $jumlah; ?></td>
-                                    <td>Rp <?php echo number_format($subtotal, 0, ',', '.'); ?></td>
+                                    <td><?= htmlspecialchars($produk['nama']); ?></td>
+                                    <td>Rp <?= number_format($produk['harga'], 0, ',', '.'); ?></td>
+                                    <td><?= $jumlah; ?></td>
+                                    <td>Rp <?= number_format($subtotal, 0, ',', '.'); ?></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td colspan="3" class="fw-bold">Total Belanja</td>
-                                    <td>Rp <?php echo number_format($totalBelanja, 0, ',', '.'); ?></td>
+                                    <td>Rp <?= number_format($totalBelanja, 0, ',', '.'); ?></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3" class="fw-bold">Ongkir</td>
@@ -120,7 +111,7 @@ if (empty($_SESSION['keranjang'])) {
                                 </tr>
                                 <tr class="table-success fw-bold">
                                     <td colspan="3">Total Pembayaran</td>
-                                    <td>Rp <span id="totalAkhir"><?php echo number_format($totalBelanja, 0, ',', '.'); ?></span></td>
+                                    <td>Rp <span id="totalAkhir"><?= number_format($totalBelanja, 0, ',', '.'); ?></span></td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -132,47 +123,21 @@ if (empty($_SESSION['keranjang'])) {
     </form>
 </div>
 
-
-<hr>
-<footer style="background: linear-gradient(to right, #DAB894, #FFD966);" class="text-white mt-5 py-4">
-    <div class="container text-center">
-        <p class="mb-2 fw-semibold text-dark">Hubungi Kami</p>
-        <a href="https://wa.me/qr/75SJHWDGP3FED1" target="_blank" class="text-dark text-decoration-none fw-semibold">
-            <i class="fab fa-whatsapp fa-2x me-2"></i> Chat via WhatsApp
-        </a>
-        <p class="mt-3 mb-0 text-dark">&copy; 2025 <strong>KueCamilan.ID</strong>. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        hitungOngkir();
-    });
-
-    function hitungOngkir() {
+    function hitungOngkirDanTotal() {
         const kota = document.getElementById('kota').value;
-        const ongkirInput = document.getElementById('ongkir');
-        const ongkirDisplay = document.getElementById('ongkirDisplay');
-        const ongkirTabel = document.getElementById('ongkirTabel');
-        const totalAkhir = document.getElementById('totalAkhir');
+        let ongkir = kota === "Batam" ? 10000 : (kota ? 30000 : 0);
 
-        let ongkir = 0;
-        if (kota === "Batam") {
-            ongkir = 10000;
-        } else if (kota !== "") {
-            ongkir = 30000;
-        }
+        const totalBelanja = <?= $totalBelanja; ?>;
+        const totalPembayaran = totalBelanja + ongkir;
 
-        const totalBelanja = <?php echo $totalBelanja; ?>;
-        const totalSemua = totalBelanja + ongkir;
-
-        ongkirInput.value = ongkir;
-        ongkirDisplay.innerText = ongkir.toLocaleString('id-ID');
-        if (ongkirTabel) ongkirTabel.innerText = ongkir.toLocaleString('id-ID');
-        if (totalAkhir) totalAkhir.innerText = totalSemua.toLocaleString('id-ID');
+        document.getElementById('ongkir').value = ongkir;
+        document.getElementById('ongkirDisplay').innerText = ongkir.toLocaleString('id-ID');
+        document.getElementById('ongkirTabel').innerText = ongkir.toLocaleString('id-ID');
+        document.getElementById('totalAkhir').innerText = totalPembayaran.toLocaleString('id-ID');
     }
+
+    document.addEventListener('DOMContentLoaded', hitungOngkirDanTotal);
 </script>
 </body>
 </html>

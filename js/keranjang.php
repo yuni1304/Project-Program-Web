@@ -41,19 +41,28 @@ require '../adminpanel/koneksi.php';
           $no = 1;
           $totalBelanja = 0;
           foreach ($_SESSION['keranjang'] as $id => $jumlah) {
-            $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE id='$id'");
+            $queryProduk = mysqli_query($con, "SELECT id, nama, harga, stok FROM produk WHERE id='$id'");
             $produk = mysqli_fetch_assoc($queryProduk);
+            
+            if (!$produk) {
+                continue; // Jika produk tidak ditemukan, lanjutkan ke item berikutnya
+            }
+
+            if ($jumlah > $produk['stok']) {
+                $jumlah = $produk['stok']; // Pastikan jumlah tidak melebihi stok
+            }
+
             $total = $produk['harga'] * $jumlah;
             $totalBelanja += $total;
           ?>
           <tr>
-            <td><?php echo $no++; ?></td>
-            <td><?php echo htmlspecialchars($produk['nama']); ?></td>
-            <td>Rp <?php echo number_format($produk['harga'], 0, ',', '.'); ?></td>
-            <td><?php echo $jumlah; ?></td>
-            <td>Rp <?php echo number_format($total, 0, ',', '.'); ?></td>
+            <td><?= $no++; ?></td>
+            <td><?= htmlspecialchars($produk['nama']); ?></td>
+            <td>Rp <?= number_format($produk['harga'], 0, ',', '.'); ?></td>
+            <td><?= $jumlah; ?></td>
+            <td>Rp <?= number_format($total, 0, ',', '.'); ?></td>
             <td>
-              <a href="keranjang_action.php?action=hapus&id=<?php echo $id; ?>" class="btn btn-sm btn-danger">
+              <a href="keranjang_action.php?action=hapus&id=<?= $id; ?>" class="btn btn-sm btn-danger">
                 <i class="fas fa-trash-alt"></i>
               </a>
             </td>
@@ -67,9 +76,9 @@ require '../adminpanel/koneksi.php';
       <div class="col-md-5">
         <div class="card border-0 shadow-sm p-4" style="background-color: #fff8e1;">
           <h5 class="fw-bold text-center mb-3">Total Belanja</h5>
-          <h3 class="text-success text-center mb-4">Rp <?php echo number_format($totalBelanja, 0, ',', '.'); ?></h3>
+          <h3 class="text-success text-center mb-4">Rp <?= number_format($totalBelanja, 0, ',', '.'); ?></h3>
           <a href="checkout.php" class="btn warna2 text-white w-100">
-            <i class="fas fa-credit-card me-2"></i> Checkout Sekarang
+            <i class="fas fa-shopping-cart me-2"></i> Checkout Sekarang
           </a>
         </div>
       </div>
