@@ -7,14 +7,6 @@ if (empty($_SESSION['keranjang'])) {
     exit;
 }
 
-// Baris-baris berikut dihapus karena tidak relevan untuk checkout keranjang:
-// $idProduk = (int)$_GET['id'];
-// $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE id = $idProduk");
-// $produk = mysqli_fetch_assoc($queryProduk);
-// if (!$produk) {
-//     echo "Produk tidak ditemukan.";
-//     exit;
-// }
 ?>
 
 <!DOCTYPE html>
