@@ -12,6 +12,7 @@
         <li class="nav-item me-4"><a class="nav-link" href="index.php">Home</a></li>
         <li class="nav-item me-4"><a class="nav-link" href="tentang-kami.php">Tentang Kami</a></li>
         <li class="nav-item me-4"><a class="nav-link" href="produk.php">Produk</a></li>
+        <li class="nav-item me-4"><a class="nav-link" href="status_pengiriman.php"><i class="bi bi-truck"></i> Cek Pengiriman</a></li>
         <li class="nav-item"><a class="nav-link" href="keranjang.php"><i class="fa fa-shopping-cart"></i> Keranjang</a></li>
       </ul>
     </div>
