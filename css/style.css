@@ -102,13 +102,13 @@
   font-weight: 500;
 }
 
-/* ==== ACTIVE NAV LINK ==== */
+
 .navbar .nav-link.active {
   color: #C17753 !important;
   font-weight: bold;
 }
 
-/* ==== BUTTON HOVER EFFECT ==== */
+
 .btn {
   transition: all 0.3s ease-in-out;
 }
@@ -118,17 +118,17 @@
   transform: scale(1.03);
 }
 
-/* ==== WARNA2 (tombol soft orange-brown) HOVER ==== */
+
 .btn.warna2:hover {
   background-color: #cc835f;
 }
 
-/* ==== WARNA4 (pink lembut) HOVER ==== */
+
 .btn.warna4:hover {
   background-color: #f4b0ba;
 }
 
-/* ==== SMOOTH CARD HOVER ==== */
+
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -136,4 +136,51 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+.custom-bg {
+    background-color: #fff8f0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.success-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.checkmark {
+    font-size: 60px;
+    color: #28a745;
+}
+
+
+.btn-custom {
+    border-radius: 30px;
+    padding: 10px 25px;
+}
+
+.bg-soft {
+    background-color: #fff8f0;
+}
+
+.form-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.status-card {
+    border-left: 5px solid #f0ad4e;
+}
+
+.footer-kue {
+    background: linear-gradient(to right, #DAB894, #FFD966);
 }

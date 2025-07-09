@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2025 at 09:24 AM
+-- Generation Time: Jul 09, 2025 at 12:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -70,7 +70,8 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`id`, `produk_id`, `nama_pembeli`, `alamat`, `no_hp`, `jumlah`, `total`, `tanggal_pesan`, `metode_pembayaran`, `kota`, `ongkir`, `status_pengiriman`, `dibatalkan`) VALUES
-(14, 15, 'Sri Wahyuni', 'Batam Kota Blok F NO 45', '081266454459', 1, 80000, '2025-07-06', 'cod', 'Batam', 10000, 'Dikirim', 0);
+(26, 14, 'sri wahyuni', 'Kavling lama blok m no 10', '081266454459', 1, 75000, '2025-07-09', 'cod', 'Batam', 10000, 'Diproses', 0),
+(27, 15, 'sri wahyuni', 'Kavling lama blok m no 10', '081266454459', 1, 80000, '2025-07-09', 'cod', 'Batam', 10000, 'Diproses', 0);
 
 -- --------------------------------------------------------
 
@@ -128,22 +129,6 @@ INSERT INTO `produk` (`id`, `kategori_id`, `nama`, `harga`, `foto`, `detail`, `k
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
---
-
-CREATE TABLE `transaksi` (
-  `id` int(11) NOT NULL,
-  `produk_id` int(11) NOT NULL,
-  `nama_pembeli` varchar(255) NOT NULL,
-  `alamat` text NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `metode_pembayaran` enum('cod','midtrans') NOT NULL,
-  `tanggal_transaksi` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -185,13 +170,6 @@ ALTER TABLE `produk`
   ADD KEY `kategori_produk` (`kategori_id`);
 
 --
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `produk_id` (`produk_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -211,19 +189,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
---
--- AUTO_INCREMENT for table `transaksi`
---
-ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -240,12 +212,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `kategori_produk` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`);
-
---
--- Constraints for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -32,6 +32,7 @@ $query = mysqli_query($con, "SELECT * FROM pesanan ORDER BY id DESC");
             <thead class="table-light">
                 <tr>
                     <th>No.</th>
+                    <th><strong>ID Pesanan</strong></th>
                     <th>Produk ID</th>
                     <th>Nama Pembeli</th>
                     <th>No. HP</th>
@@ -50,6 +51,7 @@ $query = mysqli_query($con, "SELECT * FROM pesanan ORDER BY id DESC");
                 <?php while ($row = mysqli_fetch_assoc($query)): ?>
                     <tr>
                         <td><?= $no++; ?></td>
+                        <td><strong><?= $row['id']; ?></strong></td>
                         <td><?= $row['produk_id']; ?></td>
                         <td><?= $row['nama_pembeli']; ?></td>
                         <td><?= $row['no_hp']; ?></td>
@@ -91,6 +93,7 @@ $query = mysqli_query($con, "SELECT * FROM pesanan ORDER BY id DESC");
         </table>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
